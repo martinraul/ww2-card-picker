@@ -37,7 +37,6 @@ function buildBoard() {
   document.querySelectorAll(".card").forEach((item) => {
     item.addEventListener("click", (e) => {
       const $elemento = e.target;
-      console.log($elemento);
       handlingUser($elemento);
     });
   });
@@ -55,19 +54,19 @@ function evaluateUserInput(selection) {
     return;
   } else if (selection.length === 2) {
     if (selection[0].id === selection[1].id) {
-      onMatch();
+      onMatched();
       return;
     } else {
       selection[1].style.opacity = 1;
       setTimeout(function () {
-        unmatchedCards();
+        unMatched();
       }, 1000);
       return;
     }
   }
 }
 
-function onMatch() {
+function onMatched() {
   selection[0].style.opacity = 1;
   matchedCards.push(selection[0]);
   selection[1].style.opacity = 1;
@@ -76,10 +75,10 @@ function onMatch() {
   console.log(matchedCards);
   round++;
   showScore(round);
-  checkForWin();
+  checkIfWin();
 }
 
-function unmatchedCards() {
+function unMatched() {
   selection[0].style.opacity = 0;
   selection[1].style.opacity = 0;
   selection.length = 0;
@@ -92,7 +91,7 @@ function showScore(round) {
   $score.textContent = "Round " + round;
 }
 
-function checkForWin() {
+function checkIfWin() {
   if (matchedCards.length === 12) {
     $score.className = "alert alert-danger";
     $score.textContent = "ITS DONE! in " + round + " rounds";
