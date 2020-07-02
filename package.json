@@ -1,0 +1,24 @@
+{
+  "name": "ww2-card-picker",
+  "version": "1.0.0",
+  "description": "memotest for argentinaPrograma",
+  "main": "index.html",
+  
+    "scripts": {
+      "start":"http-server-c-1",
+      "test": "cypress open"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinraul/ww2-Card-Picker.git"
+  },
+  "author": "martin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinraul/ww2-Card-Picker/issues"
+  },
+  "homepage": "https://github.com/martinraul/ww2-Card-Picker#readme",
+  "devDependencies": {
+    "cypress": "^4.9.0"
+  }
+}

@@ -1,5 +1,6 @@
 const $startButton = document.querySelector("#start-button");
 const $resetButton = document.querySelector("#reset-button");
+
 let cardsArray = [];
 let selection = [];
 let matchedCards = [];
@@ -13,7 +14,7 @@ $startButton.onclick = function () {
 
 function shuffleCards() {
   let $allCards = document.querySelectorAll(".card");
-  var i;
+  let i;
   for (i = 0; i < $allCards.length; i++) {
     cardsArray.push($allCards[i].id);
   }
@@ -25,7 +26,7 @@ function shuffleCards() {
   }
 
   cardsArray.sort(() => Math.random() - 0.5);
-  var a;
+  let a;
   for (a = 0; a < cardsArray.length; a++) {
     $img[a].id = `${cardsArray[a]}`;
     $img[a].src = `img/${cardsArray[a]}.jpg`;
@@ -51,17 +52,14 @@ function handlingUser($elemento) {
 function evaluateUserInput(selection) {
   if (selection.length === 1) {
     selection[0].style.opacity = 1;
-    return;
   } else if (selection.length === 2) {
     if (selection[0].id === selection[1].id) {
       onMatched();
-      return;
     } else {
       selection[1].style.opacity = 1;
       setTimeout(function () {
         unMatched();
       }, 1000);
-      return;
     }
   }
 }
@@ -97,3 +95,7 @@ function checkIfWin() {
     $score.textContent = "ITS DONE! in " + round + " rounds";
   }
 }
+
+$resetButton.onclick = function () {
+  location.reload();
+};
