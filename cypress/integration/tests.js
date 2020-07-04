@@ -4,8 +4,8 @@ const URL = "192.168.0.103:8080";
 
 context("WW2 card picker", () => {
   const totalCardNumber = 12;
-  const uuid = () => Cypress._.random(1, 6);
-  const id = uuid();
+  const tempIdForCards = () => Cypress._.random(1, 6);
+  const id = tempIdForCards();
   const randomCard = `#card-${id}`;
   const randomImageSource = `img/card-${id}.jpg`;
 
@@ -46,11 +46,6 @@ context("WW2 card picker", () => {
         .should("have.attr", "src")
         .should("include", randomImageSource);
     });
-    it("makes sure CARDS are not flipped if click randomly", () => {
-      cy.get(".card").then((els) => {
-        [...els].forEach((el) => cy.wrap(el).click());
-      });
-    });
 
     it("Ok now complete the game and make sure there is a SUCCESS alert", () => {
       cy.get(`[src="img/card-1.jpg"]`).click({ multiple: true });
@@ -60,7 +55,7 @@ context("WW2 card picker", () => {
       cy.get(`[src="img/card-5.jpg"]`).click({ multiple: true });
       cy.get(`[src="img/card-6.jpg"]`).click({ multiple: true });
       cy.get("#score");
-      cy.contains("ITS DONE! in 7 rounds")
+      cy.contains("ITS DONE! in 6 rounds")
         .should("be.visible")
         .should("have.class", "alert alert-danger");
     });
