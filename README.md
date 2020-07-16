@@ -1,7 +1,12 @@
 # ww2-Card-Picker
 Memory game for r/argentinaPrograma
 
-Javascript,HTML,CSS. 
-Some bootstrap and tested with Cypress.io
+## Built with
+* Javascript
+* HTML
+* CSS 
+* [Bootstrap](https://getbootstrap.com/) - For design
+* [Cypress.io](https://www.cypress.io/) - For testing
+* [Eslint](https://eslint.org/) - For code review
 
-Working Link at----->> https://martinraul.github.io/ww2-Card-Picker/
+## Working Link ----->> https://martinraul.github.io/ww2-Card-Picker/
