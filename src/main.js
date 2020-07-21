@@ -1,5 +1,6 @@
 const $startButton = document.querySelector("#start-button");
 const $resetButton = document.querySelector("#reset-button");
+const $score= document.getElementById("score")
 
 let cardsArray = [];
 let selection = [];
@@ -85,7 +86,6 @@ function unMatched() {
 }
 
 function showScore(round) {
-  $score = document.getElementById("score");
   $score.textContent = "Round " + round;
 }
 

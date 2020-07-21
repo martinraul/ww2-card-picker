@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "memotest for argentinaPrograma",
   "main": "index.html",
-  
-    "scripts": {
-      "start":"http-server-c-1",
-      "test": "cypress open",
-      "cypress-run": "cypress run"
-    },
+  "scripts": {
+    "start": "http-server-c-1",
+    "test": "cypress open",
+    "cypress-run": "cypress run"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/martinraul/ww2-Card-Picker.git"
@@ -20,6 +19,8 @@
   },
   "homepage": "https://github.com/martinraul/ww2-Card-Picker#readme",
   "devDependencies": {
-    "cypress": "^4.9.0"
-  }
+    "cypress": "^4.9.0",
+    "eslint": "^7.5.0"
+  },
+  "dependencies": {}
 }
