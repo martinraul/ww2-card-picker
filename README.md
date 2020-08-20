@@ -17,7 +17,7 @@ Published by US Games Systems and printed in Italy.
 * [Eslint](https://eslint.org/) - For code review
 
 ## Working Link
-https://martinraul.github.io/ww2-Card-Picker/
+https://martinraul.github.io/ww2-card-picker/
 
 ## Acknowledgments
 * Hat tip to everyone at [r/argentinaPrograma](https://argentinaprograma.com/)
