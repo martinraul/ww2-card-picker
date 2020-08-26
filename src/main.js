@@ -1,13 +1,16 @@
 const $startButton = document.querySelector("#start-button");
 const $resetButton = document.querySelector("#reset-button");
 const $score= document.getElementById("score")
+$startButton.className="btn btn-danger"
 
 let cardsArray = [];
 let selection = [];
 let matchedCards = [];
 let round = 0;
 
+
 $startButton.onclick = function () {
+  $startButton.className="btn btn-outline-light"
   shuffleCards();
   buildBoard();
   showScore(round);
@@ -37,8 +40,8 @@ function shuffleCards() {
 
 function buildBoard() {
   document.querySelectorAll(".card").forEach((item) => {
-    item.addEventListener("click", (e) => {
-      const $elemento = e.target;
+    item.addEventListener("click", function(event){
+      const $elemento = event.target;
       handlingUser($elemento);
     });
   });
@@ -52,7 +55,9 @@ function handlingUser($elemento) {
 
 function evaluateUserInput(selection) {
   if (selection.length === 1) {
-    selection[0].style.opacity = 1;
+   let cardSelected= selection[0]
+    cardSelected.style.opacity = 1;
+    cardSelected.className="disable"
   } else if (selection.length === 2) {
     if (selection[0].id === selection[1].id) {
       onMatched();
